@@ -1,6 +1,6 @@
 # Program to understand the concept of Iterators
 
-# in order to create our own Iterator class, we need to implement __iter__() and __next__() methods in your class.
+# In order to create our own Iterator class, we need to implement __iter__() and __next__() methods in your class.
 
 class ListIterator:
 
@@ -28,7 +28,8 @@ for i in it:
 
 # Program to understand the use of Generators
 
-# Python Generators  Example 1
+# Python Generators Example 1
+
 def my_generators_func1():
     yield 'a'
     yield 'b'
@@ -42,7 +43,8 @@ print(next(x))
 print(next(x))
 
 
-# Python Generators  Example 2
+# Python Generators Example 2
+
 def my_generators_func2():
     for i in range(5):
         print('--------', i)
@@ -59,6 +61,7 @@ print(next(x))
 
 
 # Python Generators  Example 3
+
 def list_iterator(list):
     for i in list:
         yield i
@@ -129,3 +132,78 @@ print(list(d))
 
 e = reduce(lambda x, y: x + y, my_list)
 print(e)
+
+# Program to understand the use of Closures and Nested Functions in Python
+
+# nested function example 1
+ 
+def outerFunction(text):
+    def innerFunction():
+        print(text)
+ 
+    innerFunction()
+ 
+ 
+outerFunction("Hello")
+ 
+# nested function example 2
+
+def pop(list):
+    def get_last_item(my_list):
+        return my_list[len(list) - 1]
+ 
+    list.remove(get_last_item(list))
+    return list
+ 
+ 
+a = [1, 2, 3, 4, 6]
+print(pop(a))
+print(pop(a))
+print(pop(a))
+ 
+# Closure Function example 1
+
+def outerFunction(text):
+    def innerFunction():
+        print(text)
+ 
+    return innerFunction
+ 
+ 
+a = outerFunction("Hello")
+del outerFunction
+a()
+ 
+# Closure Function example 2
+
+def nth_power(exponent):
+    def pow_of(base):
+        return pow(base, exponent)
+ 
+    return pow_of
+ 
+ 
+square = nth_power(2)
+print(square(2))
+print(square(3))
+print(square(4))
+print(square(5))
+cube = nth_power(3)
+print(cube(2))
+print(cube(3))
+print(cube(4))
+print(cube(5))
+
+# Program to understand the concept of Decorators
+
+def decorator_func(func):
+    def wrapper_func():
+        print('X' * 20)
+        func()
+        print('Y' * 20)
+ 
+    return wrapper_func
+ 
+@decorator_func
+def say_hello():
+    print('Hello World')
