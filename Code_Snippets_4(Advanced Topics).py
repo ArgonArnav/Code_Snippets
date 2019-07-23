@@ -1,4 +1,4 @@
-# Program to understand the concept of Iterators
+# Program to understand the concept and use of Iterators
 
 # In order to create our own Iterator class, we need to implement __iter__() and __next__() methods in your class.
 
