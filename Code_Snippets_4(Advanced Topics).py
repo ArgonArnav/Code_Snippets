@@ -26,7 +26,7 @@ for i in it:
     print(i)
 
 
-# Program to understand the use of Generators
+# Program to understand the concept of Generators
 
 # Python Generators Example 1
 
